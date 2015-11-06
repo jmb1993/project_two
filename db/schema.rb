@@ -17,11 +17,16 @@ ActiveRecord::Schema.define(version: 20151105150938) do
   enable_extension "plpgsql"
 
   create_table "lists", force: :cascade do |t|
+    t.text     "entry1"
+    t.text     "entry2"
+    t.text     "entry3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.text     "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
