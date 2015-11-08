@@ -5,11 +5,11 @@ class ListController < ApplicationController
     end
 
     def show
-    @song = Song.find(params[:id])
+    @list = List.find(params[:id])
     end
 
     def new
-  @song = Song.new
+  @list = List.new
   @user = Users.all
     end
 

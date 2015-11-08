@@ -8,11 +8,22 @@
       </ul>
     </div>
   <% end %>
+  <h2>Create A New User</h2>
   <div class="form">
+    <form action="">
+  <h2><span class="entypo-login"></span> Login</h2>
+  <button class="submit"><span class="entypo-lock"></span></button>
+  <span class="entypo-user inputUserIcon"></span>
+  <input type="text" class="user" placeholder="ursername"/>
+  <span class="entypo-key inputPassIcon"></span>
+  <input type="password" class="pass"placeholder="password"/>
+</form>
     <%= f.label :username, "Enter a Username: "%>
     <%= f.text_field :username%>
+
     <%= f.label :password, "Enter a Password (must be at least 6 characters long): "%>
     <%= f.password_field :password%>
     <%=  f.submit%>
+
   </div>
 <% end %>
