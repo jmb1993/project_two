@@ -1,12 +1,16 @@
 <h3>Create A List</h3>
 
 <%= form_for [ @user, @list ] do |f| %>
+<p>
+  <%= f.label "List Title" %>
+  <%= f.text_area :title %>
+</p>
   <p>
     <%= f.label :entry1 %><br/>
-    <%= f.text_field :entry1 %>
+    <%= f.text_area :entry1 %>
   </p>
   <p>
-    <%= f.label :entry2 %><br/>
+    <%= f.label :entry2 %> <br/>
     <%= f.text_area :entry2 %>
   </p>
   <p>

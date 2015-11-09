@@ -3,12 +3,13 @@
     <div class="error_messages">
       <ul>
         <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
+          <%= message %>
         <% end %>
       </ul>
     </div>
   <% end %>
   <div class="form">
+    <h2>Create a new account!</h2>
     <%= f.label :username, "Enter a Username: "%>
     <%= f.text_field :username%>
     <%= f.label :password, "Enter a Password (must be at least 6 characters long): "%>

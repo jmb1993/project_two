@@ -1,4 +1,4 @@
-class ListController < ApplicationController
+class ListsController < ApplicationController
 
     def index
       @lists = List.all
@@ -10,15 +10,20 @@ class ListController < ApplicationController
 
     def new
   @list = List.new
-  @user = Users.all
+
     end
 
     def create
-  @list = List.new list_params
-  if @list.save
-    redirect_to @list
-  else
-    render new_list_path
+  @list = List.new(list_params)
+
+  @list.user_id = params[:user_id]
+
+
+ @list.save
+
+
+redirect_to user_path(@list.user)
+
     end
 
     def edit
@@ -29,7 +34,7 @@ class ListController < ApplicationController
       @list = List.find(params[:id])
   if @list.update_attributes(list_params)
     redirect_to list_url(@list)
-    flash.notice = "List updated"
+    flash.notice = "Your list has been updated"
   else
    render :edit
     end
@@ -40,10 +45,7 @@ class ListController < ApplicationController
       @list.destroy
       redirect_to lists_path
     end
-
-
-    private
-
+private
     def list_params
       params.require(:list).permit(:entry1, :entry2, :entry3)
     end

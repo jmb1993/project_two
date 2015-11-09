@@ -1,5 +1,5 @@
   class User < ActiveRecord::Base
-    has_many :list
+    has_many :lists
     validates :username, presence: true, length: {maximum: 50}
     validates :password, presence: true, length: {minimum: 6}
 has_secure_password

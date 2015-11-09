@@ -3,7 +3,10 @@
 <h1 class = 'user homepage'>Welcome <%= @user.username %>! </h1>
 <p>
   <h3> User List</h3>
-<%= render partial: 'users/list', collection: @user.list %>
-<%= render partial: 'list/form' %>
+<%= render partial: 'users/list', collection: @user.lists %>
+<%= render partial: 'lists/form' %>
 
 </p>
+<button> <%= link_to "See All Users", users_path, class: "users" %> </button>
+<button> <%= link_to "Delete user", class: "delete-users" %> </button>
+<button> <%= link_to "Edit your list", class: "edit-users" %> </button>

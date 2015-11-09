@@ -41,7 +41,7 @@ h1{
  }
 h3{
   color:rgba(255,255,255,.8);
-  margin-left:12px;  
+  margin-left:12px;
 }
 
 
@@ -133,4 +133,13 @@ textarea{
   color:white;
   font-size:18px;
   height: 54px;
+}
+div.error_messages{
+  color: red;
+
+}
+ul#Users{
+  display: inline-block;
+  color:rgba(255,255,255,.8);
+  font-size: 12px;
 }
